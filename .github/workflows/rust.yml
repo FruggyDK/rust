@@ -4,7 +4,7 @@ name: build
 
 jobs:
   check:
-    name: hello
+    name: rust
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,4 +21,7 @@ jobs:
       - name: Run cargo check
         uses: actions-rs/cargo@v1
         with:
-          command: check
+          command: check       
+      
+      - name: rust-rustfmt-check
+        uses: mbrobbel/rustfmt-check@0.2.0
